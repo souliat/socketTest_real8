@@ -54,8 +54,8 @@ public class ChatMessageController {
 //        requestDto.setMemberId(member.getId());
 //        requestDto.setSender(member.getNickname());
         // 여기가 뭔가 문제가있음.. 편도랑 이야기.
-        requestDto.setMemberId(1L);
-        requestDto.setSender("기천");
+//        requestDto.setMemberId(1L);
+//        requestDto.setSender("기천");
 
         // 메시지 생성 시간 삽입
         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm");
