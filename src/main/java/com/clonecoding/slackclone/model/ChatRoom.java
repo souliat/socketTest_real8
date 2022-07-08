@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ChatRoom extends Timestamped {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
@@ -29,9 +29,10 @@ public class ChatRoom extends Timestamped {
 
 
 
-    public ChatRoom(ChatRoomRequestDto requestDto, AuthService authService){
+    public ChatRoom(ChatRoomRequestDto requestDto, AuthService authService, Member member){
         this.channel = requestDto.getChannel();
         this.memberList.add(authService.getMemberInfo());
+        this.memberList.add(member);
     }
 
 

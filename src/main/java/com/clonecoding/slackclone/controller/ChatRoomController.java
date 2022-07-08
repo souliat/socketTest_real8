@@ -33,19 +33,6 @@ public class ChatRoomController {
     private final ChatRoomService chatRoomService;
     private final AuthService authService;
 
-//    // 프론트엔드 테스트용
-//    @GetMapping("/channel")
-//    public String rooms() {
-//        return "/chat/room";
-//    }
-//
-//    // 프론트엔드 테스트용
-//    @GetMapping("/room/enter/{roomId}")
-//    public String roomDetail(Model model, @PathVariable String roomId) {
-//        model.addAttribute("roomId", roomId);
-//        return "/chat/roomdetail";
-//    }
-
 
     // 채팅방 생성
     @PostMapping("/channel")
@@ -101,6 +88,21 @@ public class ChatRoomController {
 //        return chatMessageService.getChatMessageByRoomId(roomId, pageable);
 //    }
 
+
+
+
+    //    // 프론트엔드 테스트용
+//    @GetMapping("/channel")
+//    public String rooms() {
+//        return "/chat/room";
+//    }
+//
+//    // 프론트엔드 테스트용
+//    @GetMapping("/room/enter/{roomId}")
+//    public String roomDetail(Model model, @PathVariable String roomId) {
+//        model.addAttribute("roomId", roomId);
+//        return "/chat/roomdetail";
+//    }
 
 
 }

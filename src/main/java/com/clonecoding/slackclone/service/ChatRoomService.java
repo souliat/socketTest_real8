@@ -50,7 +50,11 @@ public class ChatRoomService {
 
     // 채팅방 생성
     public ChatRoomResponseDto createChatRoom(ChatRoomRequestDto requestDto) {
-        ChatRoom chatRoom = new ChatRoom(requestDto, authService);
+        Member member = memberRepository.findById(requestDto.getMemberId()).orElseThrow(
+                () -> new NullPointerException("해당하는 ID를 찾을 수 없습니다.")
+        );
+
+        ChatRoom chatRoom = new ChatRoom(requestDto, authService, member);
         chatRoomRepository.save(chatRoom);
         ChatRoomResponseDto chatRoomResponseDto = new ChatRoomResponseDto(chatRoom, authService.getMemberInfo());
 

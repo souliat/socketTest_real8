@@ -16,13 +16,11 @@ public class ChatMessage {
         ENTER, TALK, QUIT
     }
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-
     @Column
     private MessageType type;
-
     @Column
     private Long roomId;
     // 이게 String roomId 였던 이유는 코드 처음 작성한 블로거(아빠개발자)가 DB 없이 해당 채팅방 구현 예시 만들다보니 Auto Increment 되는 고유한 구분 값이 없어서
@@ -32,13 +30,11 @@ public class ChatMessage {
 
     @Column
     private Long memberId;
-
     @Column
     private String sender;
     // 내용
     @Column
     private String message;
-
     @Column
     private String createdAt;
 
@@ -49,7 +45,6 @@ public class ChatMessage {
 //    @ManyToOne(fetch = FetchType.EAGER)
 //    @JoinColumn(name = "chatRoom_id_joined")
 //    private ChatRoom chatRoom;
-
 
     @Builder
     public ChatMessage(MessageType type, Long roomId, Long memberId, String sender, String senderEmail, String senderImg, String message, String createdAt) {

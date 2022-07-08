@@ -91,7 +91,7 @@ public class StompHandler implements ChannelInterceptor {
             String sessionId = (String) message.getHeaders().get("simpSessionId");
             //나갈떄 redis 맵에서 roomId와 sessionId의 매핑을 끊어줘야 하기때문에 roomId 찾고
             Long roomId = chatRoomService.getUserEnterRoomId(sessionId);
-            log.info("HashOps에서 SessionId기준으로 찾아온 roomId는={} [StompHandler_DISCONNECT]", roomId);
+            log.info("HashOps에서 SessionId 기준으로 찾아온 roomId는={} [StompHandler_DISCONNECT]", roomId);
 
             // 클라이언트 퇴장 메시지를 채팅방에 발송한다.(redis publish)
             String token = Optional.ofNullable(accessor.getFirstNativeHeader("token")).orElse("UnknownUser");
